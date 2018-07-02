@@ -4,6 +4,8 @@
 #include "server.h"
 #define MAX_CHAR_BUFFER 1024
 
+// @TODO Validation loop not working properly.
+
 int main(int argc, char* argv[], char* envp[])
 {
         /* Prints Program Options */
