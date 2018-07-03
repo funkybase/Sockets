@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<assert.h>
 #include "client.h"
 #include "server.h"
 #define MAX_CHAR_BUFFER 1024
@@ -20,22 +21,20 @@ int main(int argc, char* argv[], char* envp[])
 
         /* Validation Loop For Options */
         do{
-                printf(" Option -> ");
-                scanf("%s", option);
+                printf("Insert Option:\n");
+                fgets(option, MAX_CHAR_BUFFER, stdin);
                 value = atoi(option);
-        }while(value!=1 || value!=2);
+        }while(value!=1 && value!=2);
         /* End Of Loop */
 
         /* Process Value Input */
         switch(value){
         case 1:
                 launch_server();
-                break;
+                exit(0); /* Force Exit For The Daemon */
         case 2:
                 launch_client();
-                break;
-        default: /* Should Never Be Executed */
-                fprintf(stderr, " \n!!! Invalid Option !!!\n");
+                exit(0);
         }
         /* End Of Switch Statement */
 

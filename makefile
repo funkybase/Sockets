@@ -32,3 +32,4 @@ clean:
 	cd	..
 	cd	bin	&&	rm	-rf	program
 	cd	..
+	@echo " *** All files deleted ***"
