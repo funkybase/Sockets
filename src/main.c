@@ -5,13 +5,11 @@
 #include "server.h"
 #define MAX_CHAR_BUFFER 1024
 
-// @TODO Validation loop not working properly.
-
 int main(int argc, char* argv[], char* envp[])
 {
         /* Prints Program Options */
         char option[MAX_CHAR_BUFFER];
-        int value;
+        int value, rt_value;
         printf("\n\n ******* Client-Server Program ******* \n");
         printf("  -Select program side to be launched.\n");
         printf("     1) Launches Server-side\n");
@@ -31,7 +29,7 @@ int main(int argc, char* argv[], char* envp[])
         switch(value){
         case 1:
                 launch_server();
-                exit(0); /* Force Exit For The Daemon */
+                exit(0);
         case 2:
                 launch_client();
                 exit(0);

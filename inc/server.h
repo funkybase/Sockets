@@ -17,4 +17,4 @@
  *
  * @todo All functions to execute by the server should be added in here.
  */
-int launch_server(void);
+void launch_server(void);
